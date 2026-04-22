@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Абылай & Наркес</title>
+    <meta name="description" content="Абылай мен Наркестің ақ тойына шақыру. 15 тамыз 2026 жыл, Romance Palace, Алматы">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+        <source
+            src="https://dl.dropbox.com/scl/fi/5bqv379cq50wd48kf9zoa/feat.-Kazybek-Kuraiysh.mp3?rlkey=l2h1ll4zbf8r45pdpwxhxq0uc&st=2ir4rhdl&dl=0"
+            type="audio/mpeg" />
+    </audio>
+
+    <!-- Music Toggle -->
+    <button id="music-toggle" class="music-btn" aria-label="Музыканы қосу/өшіру">
+        <svg id="music-icon-on" class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+        </svg>
+        <svg id="music-icon-off" class="music-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+            <line x1="1" y1="1" x2="23" y2="23" stroke-width="2" />
+        </svg>
+    </button>
+
+    <!-- Floating Petals Container -->
+    <div id="petals-container"></div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="section hero-section">
+        <div class="ornament-top">
+            <svg viewBox="0 0 200 60" class="arch-ornament">
+                <path d="M20,55 Q100,5 180,55" fill="none" stroke="var(--accent-light)" stroke-width="0.6"
+                    opacity="0.5" />
+                <path d="M35,55 Q100,15 165,55" fill="none" stroke="var(--accent-light)" stroke-width="0.4"
+                    opacity="0.35" />
+            </svg>
+        </div>
+        <div class="floral-corner floral-top-left"></div>
+        <div class="floral-corner floral-top-right"></div>
+
+        <p class="hero-subtitle animate-on-scroll">Сіздерді шақырамыз</p>
+        <h1 class="hero-names animate-on-scroll">
+            <span class="name-line">Абылай</span>
+            <span class="ampersand">&</span>
+            <span class="name-line">Наркес</span>
+        </h1>
+        <div class="hero-date animate-on-scroll">
+            <div class="date-line"></div>
+            <span>15 . 08 . 2026</span>
+            <div class="date-line"></div>
+        </div>
+
+        <div class="floral-corner floral-bottom-left"></div>
+        <div class="floral-corner floral-bottom-right"></div>
+        <div class="ornament-bottom">
+            <svg viewBox="0 0 200 60" class="arch-ornament">
+                <path d="M20,5 Q100,55 180,5" fill="none" stroke="var(--accent-light)" stroke-width="0.6"
+                    opacity="0.5" />
+                <path d="M35,5 Q100,45 165,5" fill="none" stroke="var(--accent-light)" stroke-width="0.4"
+                    opacity="0.35" />
+            </svg>
+        </div>
+
+        <div class="scroll-indicator animate-on-scroll">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ============ GREETING SECTION ============ -->
+    <section id="greeting" class="section greeting-section">
+        <div class="floral-divider animate-on-scroll">
+            <svg viewBox="0 0 120 20" class="divider-svg">
+                <line x1="0" y1="10" x2="45" y2="10" stroke="var(--accent-light)" stroke-width="0.5" opacity="0.4" />
+                <circle cx="60" cy="10" r="3" fill="none" stroke="var(--accent-light)" stroke-width="0.5"
+                    opacity="0.4" />
+                <circle cx="60" cy="10" r="1" fill="var(--accent-light)" opacity="0.4" />
+                <line x1="75" y1="10" x2="120" y2="10" stroke="var(--accent-light)" stroke-width="0.5" opacity="0.4" />
+            </svg>
+        </div>
+        <p class="greeting-text animate-on-scroll">Сәлеметсіз бе!</p>
+        <p class="greeting-body animate-on-scroll">
+            Сіздерді ұлымыз <strong>Абылай</strong> мен келініміз <strong>Наркестің</strong>
+            ақ дастархан жайылған ақ тойына құрметпен шақырамыз!
+        </p>
+        <p class="greeting-note animate-on-scroll">
+            Сіздердің келулеріңіз — біз үшін үлкен құрмет
+            және қуанышымызды еселей түседі.
+        </p>
+        <div class="floral-divider animate-on-scroll">
+            <svg viewBox="0 0 120 20" class="divider-svg">
+                <line x1="0" y1="10" x2="45" y2="10" stroke="var(--accent-light)" stroke-width="0.5" opacity="0.4" />
+                <circle cx="60" cy="10" r="3" fill="none" stroke="var(--accent-light)" stroke-width="0.5"
+                    opacity="0.4" />
+                <circle cx="60" cy="10" r="1" fill="var(--accent-light)" opacity="0.4" />
+                <line x1="75" y1="10" x2="120" y2="10" stroke="var(--accent-light)" stroke-width="0.5" opacity="0.4" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============ CALENDAR SECTION ============ -->
+    <section id="calendar" class="section calendar-section">
+        <h2 class="section-title animate-on-scroll">Тамыз 2026</h2>
+        <div class="calendar-grid animate-on-scroll">
+            <div class="calendar-header">
+                <span>Дс</span><span>Сс</span><span>Ср</span><span>Бс</span><span>Жм</span><span>Сб</span><span>Жк</span>
+            </div>
+            <div class="calendar-days">
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span class="highlight">15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+                <span>25</span>
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+                <span>31</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COUNTDOWN SECTION ============ -->
+    <section id="countdown" class="section countdown-section">
+        <h2 class="section-title animate-on-scroll">Тойға дейін</h2>
+        <div class="countdown-timer animate-on-scroll" id="countdown-timer">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">000</span>
+                <span class="countdown-label">күн</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">сағат</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">минут</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">секунд</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VENUE SECTION ============ -->
+    <section id="venue" class="section venue-section">
+        <h2 class="section-title animate-on-scroll">Өтетін орны</h2>
+        <div class="venue-card animate-on-scroll">
+            <div class="venue-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" width="32" height="32">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </div>
+            <h3 class="venue-name">Romance Palace</h3>
+            <p class="venue-city">Алматы қаласы</p>
+            <div class="venue-details">
+                <div class="venue-detail-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"
+                        height="18">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span>15 тамыз 2026</span>
+                </div>
+                <div class="venue-detail-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"
+                        height="18">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>17:00</span>
+                </div>
+            </div>
+            <a href="https://2gis.kz/almaty/search/Romance%20Palace" target="_blank" rel="noopener"
+                class="venue-map-btn" id="map-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                </svg>
+                Картадан қарау
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ HOSTS SECTION ============ -->
+    <section id="hosts" class="section hosts-section">
+        <h2 class="section-title animate-on-scroll">Той иелері</h2>
+        <div class="hosts-names animate-on-scroll">
+            <span class="host-name">Серік</span>
+            <span class="host-amp">&</span>
+            <span class="host-name">Толқын</span>
+        </div>
+    </section>
+
+    <!-- ============ RSVP SECTION ============ -->
+    <section id="rsvp" class="section rsvp-section">
+        <h2 class="section-title animate-on-scroll">Қатысуыңызды растаңыз</h2>
+        <p class="rsvp-subtitle animate-on-scroll">Тойға келесіз бе?</p>
+        <form id="rsvp-form" class="rsvp-form animate-on-scroll">
+            <div class="form-group">
+                <label for="guest-name">Есіміңіз</label>
+                <input type="text" id="guest-name" name="name" placeholder="Аты-жөніңіз" required>
+            </div>
+            <div class="form-group">
+                <label>Қатысуыңыз</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Келемін" required>
+                        <span class="radio-custom"></span>
+                        <span>Келемін! 🎉</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Жұбайыммен келемін">
+                        <span class="radio-custom"></span>
+                        <span>Жұбайыммен келемін! 💑</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="Келе алмаймын">
+                        <span class="radio-custom"></span>
+                        <span>Өкінішке орай, келе алмаймын 😔</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="guest-wishes">Тілектеріңіз (міндетті емес)</label>
+                <textarea id="guest-wishes" name="wishes" placeholder="Тілектеріңізді жазыңыз..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="btn-text">Жіберу</span>
+                <span class="btn-loader hidden">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-dasharray="30 50" class="spinner" />
+                    </svg>
+                </span>
+            </button>
+        </form>
+        <div id="rsvp-success" class="rsvp-success hidden">
+            <div class="success-icon">✓</div>
+            <p>Рахмет! Сіздің жауабыңыз қабылданды.</p>
+            <p class="success-sub">Сізді тойда көруді асыға күтеміз! 🤍</p>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-ornament">
+            <svg viewBox="0 0 120 20" class="divider-svg">
+                <line x1="0" y1="10" x2="45" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" />
+                <circle cx="60" cy="10" r="3" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" />
+                <circle cx="60" cy="10" r="1" fill="rgba(255,255,255,0.15)" />
+                <line x1="75" y1="10" x2="120" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" />
+            </svg>
+        </div>
+        <p class="footer-names">Абылай & Наркес</p>
+        <p class="footer-date">15.08.2026 • Алматы</p>
+        <p class="footer-heart">🤍</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
