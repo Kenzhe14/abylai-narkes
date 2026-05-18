@@ -1,0 +1,682 @@
+/* ============================================
+   WEDDING INVITATION — Абылай & Наркес
+   Exact Replica of Tilda Reference Design
+   ============================================ */
+
+:root {
+    --black: #1a1a1a;
+    --gray-dark: #333;
+    --gray: #666;
+    --gray-light: #999;
+    --white: #ffffff;
+    --bg: #f5f3f0;
+}
+
+/* === RESET === */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Tenor Sans', sans-serif;
+    color: var(--black);
+    background: var(--bg);
+    background-image: url('bg.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* === SECTION BASE === */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 28px;
+}
+
+/* === SCROLL ANIMATIONS === */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30px;
+}
+
+/* --- Full-width photo --- */
+.hero-photo-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Bottom part: white wave cutout */
+    clip-path: ellipse(120% 95% at 50% 0%);
+}
+
+/* --- Names banner on top of photo --- */
+.names-banner {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(4px);
+    padding: 12px 20px;
+    text-align: center;
+}
+
+.names-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+/* --- Circular music play button --- */
+.music-play-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.play-icon {
+    width: 22px;
+    height: 22px;
+    z-index: 2;
+}
+
+/* Circular text around play button */
+.circular-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.38rem;
+    letter-spacing: 2.5px;
+    color: var(--white);
+    animation: rotateText 12s linear infinite;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Render circular text with CSS conic path hack — we'll use JS for proper SVG text path */
+/* For simplicity, hide and use simple rotate animation */
+.circular-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Will render via SVG in future */
+}
+
+/* --- Date section --- */
+.date-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 24px 0 20px;
+}
+
+.date-dayname {
+    font-size: 0.75rem;
+    letter-spacing: 6px;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.date-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0;
+}
+
+.date-divider-v {
+    display: block;
+    width: 1px;
+    height: 36px;
+    background: var(--black);
+}
+
+.date-big-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--black);
+}
+
+.date-monthname {
+    font-size: 0.75rem;
+    letter-spacing: 6px;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.date-year {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--gray);
+    margin-top: 2px;
+}
+
+/* --- Heart divider (used everywhere) --- */
+.heart-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 200px;
+    margin: 10px auto;
+}
+
+.h-line {
+    flex: 1;
+    height: 1px;
+    background: var(--black);
+}
+
+.h-heart {
+    font-size: 0.65rem;
+    color: var(--black);
+    line-height: 1;
+}
+
+/* =========================================
+   GREETING SECTION
+   ========================================= */
+.greeting-section {
+    padding: 50px 32px;
+    gap: 30px;
+}
+
+.greeting-address {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 2;
+}
+
+.greeting-invite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.invite-line-upper {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 2;
+}
+
+.invite-name-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--black);
+    line-height: 1.3;
+    margin: 4px 0;
+}
+
+/* =========================================
+   VENUE SECTION
+   ========================================= */
+.venue-section {
+    padding: 50px 32px;
+    gap: 24px;
+}
+
+.script-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.4;
+}
+
+.venue-address {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 2;
+}
+
+.gis-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    font-weight: 400;
+    transition: opacity 0.3s;
+}
+
+.gis-btn:active {
+    opacity: 0.8;
+}
+
+/* =========================================
+   CALENDAR SECTION
+   ========================================= */
+.calendar-section {
+    padding: 30px 28px 50px;
+    gap: 20px;
+}
+
+.calendar-date-text {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.calendar-grid {
+    width: 300px;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    margin-bottom: 6px;
+}
+
+.calendar-header span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--black);
+    text-align: center;
+    padding: 4px 0;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+}
+
+.calendar-days span {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--black);
+    text-align: center;
+    padding: 8px 2px;
+    font-weight: 400;
+}
+
+.calendar-days span.empty {
+    visibility: hidden;
+}
+
+/* Oval/circle outline around the date — exactly like reference */
+.calendar-days span.highlight {
+    position: relative;
+    font-weight: 700;
+}
+
+.calendar-days span.highlight::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 26px;
+    border: 1.5px solid var(--black);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-time {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--black);
+    margin-top: 10px;
+}
+
+/* =========================================
+   COUNTDOWN SECTION
+   ========================================= */
+.countdown-section {
+    padding: 40px 28px 50px;
+    gap: 24px;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.countdown-label {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.6rem;
+    color: var(--black);
+    margin-top: 6px;
+    letter-spacing: 0;
+}
+
+.countdown-sep {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* =========================================
+   RSVP SECTION
+   ========================================= */
+.rsvp-section {
+    padding: 50px 32px;
+    gap: 24px;
+}
+
+.rsvp-instruction {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.9;
+    max-width: 300px;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    max-width: 340px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Input with only bottom border — like reference */
+.rsvp-form input[type="text"] {
+    width: 100%;
+    padding: 12px 4px;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    background: transparent;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--black);
+    outline: none;
+    border-radius: 0;
+}
+
+.input-line {
+    display: none;
+}
+
+.form-question {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+/* --- Radio buttons --- */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray);
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.3s;
+}
+
+.radio-label input[type="radio"]:checked+.radio-circle {
+    border-color: var(--black);
+}
+
+.radio-label input[type="radio"]:checked+.radio-circle::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--black);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- Submit button (black pill) --- */
+.submit-btn {
+    padding: 14px 40px;
+    border: none;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: center;
+    transition: opacity 0.3s;
+}
+
+.submit-btn:active {
+    opacity: 0.8;
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 0.8s linear infinite;
+}
+
+/* Success */
+.rsvp-success {
+    text-align: center;
+    padding: 30px;
+}
+
+.success-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.rsvp-success p {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--black);
+}
+
+/* =========================================
+   FOOTER / HOSTS
+   ========================================= */
+.footer-section {
+    padding: 30px 32px 60px;
+    gap: 14px;
+}
+
+.hosts-names {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (min-width: 500px) {
+    body {
+        max-width: 430px;
+        margin: 0 auto;
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+    }
+}
+
+@media (max-width: 360px) {
+    .names-script {
+        font-size: 1.6rem;
+    }
+
+    .date-big-number {
+        font-size: 3rem;
+    }
+
+    .invite-name-script {
+        font-size: 2rem;
+    }
+
+    .countdown-number {
+        font-size: 2.8rem;
+    }
+
+    .countdown-sep {
+        font-size: 2.4rem;
+    }
+}
